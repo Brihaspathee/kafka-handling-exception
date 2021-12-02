@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-02T19:57:12.085Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="VFZmPb14cBqDtGcW4k8b" version="15.8.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-02T19:59:46.940Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" etag="_bin6gHW3P7fws09hrdb" version="15.8.9" type="github">
   <diagram name="Page-1" id="90a13364-a465-7bf4-72fc-28e22215d7a0">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
@@ -66,6 +66,9 @@
               <mxPoint x="1150" y="760" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="u9WN_E8dZoTQRjX3vws--35" value="&lt;h1&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Re-Throw Exception&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;In this example the food order error handler after handling the exception re-throws the exceptions which is then handled by the global error handler.&amp;nbsp;&lt;/p&gt;&lt;p&gt;This is not mandatory, we could have just stopped with Food Order Error Handler.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="230" width="240" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
