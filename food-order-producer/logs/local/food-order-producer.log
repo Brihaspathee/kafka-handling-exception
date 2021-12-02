@@ -1,0 +1,54 @@
+2021-12-02 07:44:36.052  INFO 1615 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Starting FoodOrderProducerApplicationTests using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1615 (started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-producer)
+2021-12-02 07:44:36.053  INFO 1615 --- [main] c.e.f.FoodOrderProducerApplicationTests  : No active profile set, falling back to default profiles: default
+2021-12-02 07:44:36.622  INFO 1615 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 07:44:36.638  INFO 1615 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2021-12-02 07:44:37.148  INFO 1615 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 07:44:37.300  INFO 1615 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 07:44:37.355  INFO 1615 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 07:44:37.393  INFO 1615 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 07:44:37.516  INFO 1615 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 07:44:37.623  INFO 1615 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 07:44:37.791  INFO 1615 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 07:44:37.799  INFO 1615 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:44:38.130  WARN 1615 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 07:44:38.597  INFO 1615 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Started FoodOrderProducerApplicationTests in 2.821 seconds (JVM running for 3.645)
+2021-12-02 07:44:38.869  INFO 1615 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:44:38.869  INFO 1615 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:44:38.872  INFO 1615 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:44:38.875  INFO 1615 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 07:46:23.922  INFO 1684 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Starting FoodOrderProducerApplicationTests using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1684 (started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-producer)
+2021-12-02 07:46:23.925  INFO 1684 --- [main] c.e.f.FoodOrderProducerApplicationTests  : No active profile set, falling back to default profiles: default
+2021-12-02 07:46:24.525  INFO 1684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 07:46:24.538  INFO 1684 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-12-02 07:46:25.012  INFO 1684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 07:46:25.152  INFO 1684 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 07:46:25.207  INFO 1684 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 07:46:25.245  INFO 1684 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 07:46:25.387  INFO 1684 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 07:46:25.512  INFO 1684 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 07:46:25.700  INFO 1684 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 07:46:25.709  INFO 1684 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:46:26.066  WARN 1684 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 07:46:26.552  INFO 1684 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Started FoodOrderProducerApplicationTests in 2.896 seconds (JVM running for 3.804)
+2021-12-02 07:46:26.894  INFO 1684 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:46:26.896  INFO 1684 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:46:26.899  INFO 1684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:46:26.903  INFO 1684 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 07:56:13.836  INFO 1837 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Starting FoodOrderProducerApplicationTests using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1837 (started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-producer)
+2021-12-02 07:56:13.838  INFO 1837 --- [main] c.e.f.FoodOrderProducerApplicationTests  : No active profile set, falling back to default profiles: default
+2021-12-02 07:56:14.403  INFO 1837 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 07:56:14.415  INFO 1837 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-12-02 07:56:14.909  INFO 1837 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 07:56:15.054  INFO 1837 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 07:56:15.111  INFO 1837 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 07:56:15.152  INFO 1837 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 07:56:15.276  INFO 1837 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 07:56:15.381  INFO 1837 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 07:56:15.544  INFO 1837 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 07:56:15.550  INFO 1837 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:56:15.874  WARN 1837 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 07:56:16.321  INFO 1837 --- [main] c.e.f.FoodOrderProducerApplicationTests  : Started FoodOrderProducerApplicationTests in 2.758 seconds (JVM running for 3.596)
+2021-12-02 07:56:16.584  INFO 1837 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:56:16.585  INFO 1837 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:56:16.586  INFO 1837 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:56:16.589  INFO 1837 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

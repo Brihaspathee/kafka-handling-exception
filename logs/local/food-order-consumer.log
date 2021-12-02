@@ -1,0 +1,1199 @@
+2021-12-02 06:04:21.105  INFO 1161 --- [main] c.e.f.FoodOrderConsumerApplication       : Starting FoodOrderConsumerApplication using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1161 (/Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-consumer/target/classes started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception)
+2021-12-02 06:04:21.108  INFO 1161 --- [main] c.e.f.FoodOrderConsumerApplication       : The following profiles are active: local,clean
+2021-12-02 06:04:21.788  INFO 1161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 06:04:21.804  INFO 1161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-12-02 06:04:22.338  INFO 1161 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-12-02 06:04:22.352  INFO 1161 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-02 06:04:22.352  INFO 1161 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-02 06:04:22.463  INFO 1161 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-02 06:04:22.464  INFO 1161 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1298 ms
+2021-12-02 06:04:22.497  INFO 1161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 06:04:22.640  INFO 1161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 06:04:22.650  INFO 1161 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:foodinventorydb'
+2021-12-02 06:04:22.841  INFO 1161 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 06:04:22.895  INFO 1161 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 06:04:23.033  INFO 1161 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 06:04:23.120  INFO 1161 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 06:04:23.274  INFO 1161 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 06:04:23.282  INFO 1161 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 06:04:23.371  WARN 1161 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 06:04:23.783  INFO 1161 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 06:04:23.862  INFO 1161 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 06:04:23.862  INFO 1161 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 06:04:23.862  INFO 1161 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638443063860
+2021-12-02 06:04:23.865  INFO 1161 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.order
+2021-12-02 06:04:23.885  INFO 1161 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-12-02 06:04:23.902  INFO 1161 --- [main] c.e.f.FoodOrderConsumerApplication       : Started FoodOrderConsumerApplication in 3.468 seconds (JVM running for 4.633)
+2021-12-02 06:04:24.233  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 06:04:24.235  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 06:04:24.237  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 06:04:24.274  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 06:04:24.275  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 06:04:24.298  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-food-order-consumer-group-1-90d2745b-2679-4031-91b3-ea59bef06867', protocol='range'}
+2021-12-02 06:04:24.300  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Finished assignment for group at generation 1: {consumer-food-order-consumer-group-1-90d2745b-2679-4031-91b3-ea59bef06867=Assignment(partitions=[t.food.order-0])}
+2021-12-02 06:04:24.357  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-food-order-consumer-group-1-90d2745b-2679-4031-91b3-ea59bef06867', protocol='range'}
+2021-12-02 06:04:24.357  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.order-0])
+2021-12-02 06:04:24.359  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.order-0
+2021-12-02 06:04:24.375  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Found no committed offset for partition t.food.order-0
+2021-12-02 06:04:24.414  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting offset for partition t.food.order-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}.
+2021-12-02 06:04:24.415  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.order-0]
+2021-12-02 06:06:23.954  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.consumer.FoodOrderConsumer         : Food Order is valid: {"foodName":"chicken","category":"non-veg","amount":3}
+2021-12-02 06:06:51.046  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:51.052 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:51.546  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:51.546 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:52.061  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:52.062 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:52.575  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:52.576 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:53.090  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:53.092 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:53.600  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:53.601 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:54.111  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:54.111 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:54.621  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:54.622 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:55.135  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Seeking to offset 1 for partition t.food.order-0
+2021-12-02 06:06:55.136 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : Error handler threw an exception
+
+org.springframework.kafka.KafkaException: Seek to current after exception; nested exception is org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.SeekUtils.seekOrRecover(SeekUtils.java:206) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.DefaultErrorHandler.handleRemaining(DefaultErrorHandler.java:133) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeErrorHandler(KafkaMessageListenerContainer.java:2623) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2492) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 9 common frames omitted
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:06:55.639 ERROR 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.kafka.listener.DefaultErrorHandler   : Backoff FixedBackOff{interval=0, currentAttempts=10, maxAttempts=9} exhausted for t.food.order-0@1
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2636) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2606) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2567) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2481) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2403) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2282) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:1956) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1351) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1342) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1234) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:363) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+Caused by: java.lang.IllegalArgumentException: Food Order amount is too many
+	at com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(FoodOrderConsumer.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119) ~[spring-messaging-5.3.13.jar:5.3.13]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:347) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-2.8.0.jar:2.8.0]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2586) ~[spring-kafka-2.8.0.jar:2.8.0]
+	... 11 common frames omitted
+
+2021-12-02 06:07:38.051  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.consumer.FoodOrderConsumer         : Food Order is valid: {"foodName":"pizza","category":"veg","amount":5}
+2021-12-02 06:18:54.489  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.order-0
+2021-12-02 06:18:54.490  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.order-0]
+2021-12-02 06:18:54.491  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-1-90d2745b-2679-4031-91b3-ea59bef06867 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 06:18:54.493  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 06:18:54.493  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 06:18:54.494  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 06:18:54.494  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 06:18:54.494  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 06:18:54.508  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 06:18:54.508  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 06:18:54.508  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 06:18:54.511  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-1 unregistered
+2021-12-02 06:18:54.512  INFO 1161 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 06:18:54.515  INFO 1161 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 06:18:54.516  INFO 1161 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 06:18:54.518  INFO 1161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 06:18:54.521  INFO 1161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 06:19:02.764  INFO 1259 --- [main] c.e.f.FoodOrderConsumerApplication       : Starting FoodOrderConsumerApplication using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1259 (/Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-consumer/target/classes started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception)
+2021-12-02 06:19:02.767  INFO 1259 --- [main] c.e.f.FoodOrderConsumerApplication       : The following profiles are active: local,clean
+2021-12-02 06:19:03.339  INFO 1259 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 06:19:03.356  INFO 1259 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-12-02 06:19:03.786  INFO 1259 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-12-02 06:19:03.792  INFO 1259 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-02 06:19:03.793  INFO 1259 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-02 06:19:03.874  INFO 1259 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-02 06:19:03.875  INFO 1259 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1065 ms
+2021-12-02 06:19:03.897  INFO 1259 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 06:19:03.990  INFO 1259 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 06:19:03.999  INFO 1259 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:foodinventorydb'
+2021-12-02 06:19:04.120  INFO 1259 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 06:19:04.152  INFO 1259 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 06:19:04.278  INFO 1259 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 06:19:04.353  INFO 1259 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 06:19:04.495  INFO 1259 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 06:19:04.503  INFO 1259 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 06:19:04.584  WARN 1259 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 06:19:04.949  INFO 1259 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 06:19:05.015  INFO 1259 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 06:19:05.016  INFO 1259 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 06:19:05.016  INFO 1259 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638443945013
+2021-12-02 06:19:05.018  INFO 1259 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.order
+2021-12-02 06:19:05.035  INFO 1259 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-12-02 06:19:05.045  INFO 1259 --- [main] c.e.f.FoodOrderConsumerApplication       : Started FoodOrderConsumerApplication in 2.662 seconds (JVM running for 3.326)
+2021-12-02 06:19:05.307  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 06:19:05.309  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 06:19:05.310  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 06:19:05.324  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 06:19:05.325  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 06:19:05.331  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-food-order-consumer-group-1-f352e1df-2432-4acc-9627-e113c3785028', protocol='range'}
+2021-12-02 06:19:05.332  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Finished assignment for group at generation 3: {consumer-food-order-consumer-group-1-f352e1df-2432-4acc-9627-e113c3785028=Assignment(partitions=[t.food.order-0])}
+2021-12-02 06:19:05.340  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-food-order-consumer-group-1-f352e1df-2432-4acc-9627-e113c3785028', protocol='range'}
+2021-12-02 06:19:05.341  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.order-0])
+2021-12-02 06:19:05.342  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.order-0
+2021-12-02 06:19:05.351  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Setting offset for partition t.food.order-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2021-12-02 06:19:05.366  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.order-0]
+2021-12-02 06:19:18.058  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.consumer.FoodOrderConsumer         : Food Order is valid: {"foodName":"pizza","category":"veg","amount":5}
+2021-12-02 06:19:51.648  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.e.handler.FoodOrderErrorHandler    : Food order error. pretending to send to elasticsearch:{"foodName":"pizza","category":"veg","amount":10}, because :Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+2021-12-02 07:05:57.499  WARN 1259 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s87ms).
+2021-12-02 07:09:27.504  INFO 1259 --- [kafka-coordinator-heartbeat-thread | food-order-consumer-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response.isDisconnected: false. Rediscovery will be attempted.
+2021-12-02 07:09:27.520  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:09:27.521  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:09:27.522  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable.isDisconnected: false. Rediscovery will be attempted.
+2021-12-02 07:09:27.634  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:09:47.190  WARN 1259 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m19s673ms).
+2021-12-02 07:22:41.172  WARN 1259 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s865ms).
+2021-12-02 07:24:17.568  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Error sending fetch request (sessionId=149710146, epoch=7143) to node 1:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2021-12-02 07:24:17.570  INFO 1259 --- [kafka-coordinator-heartbeat-thread | food-order-consumer-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response.isDisconnected: false. Rediscovery will be attempted.
+2021-12-02 07:24:17.657  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:24:18.409  WARN 1259 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m37s237ms).
+2021-12-02 07:29:00.826  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.order-0
+2021-12-02 07:29:00.828  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.order-0]
+2021-12-02 07:29:00.828  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-1-f352e1df-2432-4acc-9627-e113c3785028 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 07:29:00.831  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:29:00.831  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:29:00.831  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 07:29:00.832  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:29:00.832  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:29:00.838  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 07:29:00.838  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 07:29:00.838  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 07:29:00.842  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-1 unregistered
+2021-12-02 07:29:00.843  INFO 1259 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 07:29:00.847  INFO 1259 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:29:00.849  INFO 1259 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:29:00.853  INFO 1259 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:29:00.856  INFO 1259 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 07:29:43.069  INFO 1502 --- [main] c.e.f.FoodOrderConsumerApplication       : Starting FoodOrderConsumerApplication using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1502 (/Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-consumer/target/classes started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception)
+2021-12-02 07:29:43.074  INFO 1502 --- [main] c.e.f.FoodOrderConsumerApplication       : The following profiles are active: local,clean
+2021-12-02 07:29:43.587  INFO 1502 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 07:29:43.602  INFO 1502 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2021-12-02 07:29:43.979  INFO 1502 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-12-02 07:29:43.986  INFO 1502 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-02 07:29:43.986  INFO 1502 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-02 07:29:44.064  INFO 1502 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-02 07:29:44.064  INFO 1502 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 954 ms
+2021-12-02 07:29:44.085  INFO 1502 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 07:29:44.169  INFO 1502 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 07:29:44.178  INFO 1502 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:foodinventorydb'
+2021-12-02 07:29:44.315  INFO 1502 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 07:29:44.351  INFO 1502 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 07:29:44.477  INFO 1502 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 07:29:44.552  INFO 1502 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 07:29:44.687  INFO 1502 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 07:29:44.695  INFO 1502 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:29:44.852  WARN 1502 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 07:29:45.135  INFO 1502 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 12000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 07:29:45.196  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 07:29:45.196  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 07:29:45.196  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638448185194
+2021-12-02 07:29:45.198  INFO 1502 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.order
+2021-12-02 07:29:45.208  INFO 1502 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 12000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 07:29:45.213  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 07:29:45.214  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 07:29:45.214  INFO 1502 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638448185213
+2021-12-02 07:29:45.214  INFO 1502 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.payment
+2021-12-02 07:29:45.221  INFO 1502 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-12-02 07:29:45.230  INFO 1502 --- [main] c.e.f.FoodOrderConsumerApplication       : Started FoodOrderConsumerApplication in 2.456 seconds (JVM running for 3.201)
+2021-12-02 07:29:45.486  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 07:29:45.486  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 07:29:45.489  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:29:45.489  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:29:45.491  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:29:45.491  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:29:45.507  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 07:29:45.507  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 07:29:45.507  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:29:45.507  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:29:45.517  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=5, memberId='consumer-food-order-consumer-group-1-54449b47-f992-45a7-92af-53a3735519b2', protocol='range'}
+2021-12-02 07:29:45.518  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=5, memberId='consumer-food-order-consumer-group-2-ef54d9e3-d783-4097-85bb-2b5aaf840cdb', protocol='range'}
+2021-12-02 07:29:45.529  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Finished assignment for group at generation 5: {consumer-food-order-consumer-group-1-54449b47-f992-45a7-92af-53a3735519b2=Assignment(partitions=[t.food.order-0]), consumer-food-order-consumer-group-2-ef54d9e3-d783-4097-85bb-2b5aaf840cdb=Assignment(partitions=[t.food.payment-0])}
+2021-12-02 07:29:45.535  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=5, memberId='consumer-food-order-consumer-group-1-54449b47-f992-45a7-92af-53a3735519b2', protocol='range'}
+2021-12-02 07:29:45.535  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=5, memberId='consumer-food-order-consumer-group-2-ef54d9e3-d783-4097-85bb-2b5aaf840cdb', protocol='range'}
+2021-12-02 07:29:45.536  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.order-0])
+2021-12-02 07:29:45.536  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.payment-0])
+2021-12-02 07:29:45.537  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.payment-0
+2021-12-02 07:29:45.537  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.order-0
+2021-12-02 07:29:45.546  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Found no committed offset for partition t.food.payment-0
+2021-12-02 07:29:45.548  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Setting offset for partition t.food.order-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2021-12-02 07:29:45.556  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Resetting offset for partition t.food.payment-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}.
+2021-12-02 07:29:45.557  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.payment-0]
+2021-12-02 07:29:45.562  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.order-0]
+2021-12-02 07:30:05.144  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.consumer.FoodOrderConsumer         : Food Order is valid: {"foodName":"pizza","category":"veg","amount":5}
+2021-12-02 07:31:01.186  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.e.f.consumer.FoodPaymentConsumer       : Food Payment is FoodPayment{foodName='pizza', paymentAmount=10.0}
+2021-12-02 07:31:14.131  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.e.f.error.handler.GlobalErrorHandler   : Error from Global error handler:{"foodName":"pizza","paymentAmount":3.0}
+2021-12-02 07:31:27.048  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.e.handler.FoodOrderErrorHandler    : Food order error. pretending to send to elasticsearch:{"foodName":"pizza","category":"veg","amount":10}, because :Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+2021-12-02 07:31:37.221  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.order-0
+2021-12-02 07:31:37.221  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.payment-0
+2021-12-02 07:31:37.221  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.order-0]
+2021-12-02 07:31:37.222  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.payment-0]
+2021-12-02 07:31:37.222  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-1-54449b47-f992-45a7-92af-53a3735519b2 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 07:31:37.222  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-2-ef54d9e3-d783-4097-85bb-2b5aaf840cdb sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 07:31:37.225  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 07:31:37.226  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.226  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.226  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.226  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:31:37.230  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 07:31:37.230  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 07:31:37.230  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 07:31:37.231  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 07:31:37.232  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 07:31:37.232  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 07:31:37.237  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-2 unregistered
+2021-12-02 07:31:37.238  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 07:31:37.238  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-1 unregistered
+2021-12-02 07:31:37.238  INFO 1502 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 07:31:37.241  INFO 1502 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:31:37.241  INFO 1502 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:31:37.245  INFO 1502 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:31:37.247  INFO 1502 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-02 07:32:32.816  INFO 1522 --- [main] c.e.f.FoodOrderConsumerApplication       : Starting FoodOrderConsumerApplication using Java 17.0.1 on Balajis-MacBook-Pro.local with PID 1522 (/Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception/food-order-consumer/target/classes started by balajivaradharajan in /Users/balajivaradharajan/Documents/Development/Learning/Java/Spring/Kafka/handling-exception)
+2021-12-02 07:32:32.818  INFO 1522 --- [main] c.e.f.FoodOrderConsumerApplication       : The following profiles are active: local,clean
+2021-12-02 07:32:33.378  INFO 1522 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-02 07:32:33.393  INFO 1522 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-12-02 07:32:33.774  INFO 1522 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-12-02 07:32:33.781  INFO 1522 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-02 07:32:33.782  INFO 1522 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-02 07:32:33.857  INFO 1522 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-02 07:32:33.857  INFO 1522 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1002 ms
+2021-12-02 07:32:33.878  INFO 1522 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-02 07:32:33.963  INFO 1522 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-02 07:32:33.970  INFO 1522 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:foodinventorydb'
+2021-12-02 07:32:34.095  INFO 1522 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-02 07:32:34.126  INFO 1522 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-02 07:32:34.247  INFO 1522 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-02 07:32:34.326  INFO 1522 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-02 07:32:34.457  INFO 1522 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-02 07:32:34.464  INFO 1522 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:32:34.607  WARN 1522 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-02 07:32:34.886  INFO 1522 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 12000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 07:32:34.950  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 07:32:34.950  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 07:32:34.950  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638448354948
+2021-12-02 07:32:34.952  INFO 1522 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.order
+2021-12-02 07:32:34.961  INFO 1522 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-food-order-consumer-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = food-order-consumer-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 12000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-12-02 07:32:34.967  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.0.0
+2021-12-02 07:32:34.967  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8cb0a5e9d3441962
+2021-12-02 07:32:34.967  INFO 1522 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1638448354967
+2021-12-02 07:32:34.967  INFO 1522 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Subscribed to topic(s): t.food.payment
+2021-12-02 07:32:34.974  INFO 1522 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-12-02 07:32:34.983  INFO 1522 --- [main] c.e.f.FoodOrderConsumerApplication       : Started FoodOrderConsumerApplication in 2.475 seconds (JVM running for 3.08)
+2021-12-02 07:32:35.246  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 07:32:35.246  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Cluster ID: 3_rJb2NxSPWqNeklBTT14w
+2021-12-02 07:32:35.247  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:32:35.247  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2021-12-02 07:32:35.249  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:32:35.249  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:32:35.268  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 07:32:35.268  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: need to re-join with the given member-id
+2021-12-02 07:32:35.269  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:32:35.269  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] (Re-)joining group
+2021-12-02 07:32:35.275  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=7, memberId='consumer-food-order-consumer-group-1-ff64ecf6-a217-409f-8f07-ced644d94a1b', protocol='range'}
+2021-12-02 07:32:35.275  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Successfully joined group with generation Generation{generationId=7, memberId='consumer-food-order-consumer-group-2-981116d9-08c1-4030-ad3d-f7996a37f498', protocol='range'}
+2021-12-02 07:32:35.285  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Finished assignment for group at generation 7: {consumer-food-order-consumer-group-1-ff64ecf6-a217-409f-8f07-ced644d94a1b=Assignment(partitions=[t.food.order-0]), consumer-food-order-consumer-group-2-981116d9-08c1-4030-ad3d-f7996a37f498=Assignment(partitions=[t.food.payment-0])}
+2021-12-02 07:32:35.291  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=7, memberId='consumer-food-order-consumer-group-1-ff64ecf6-a217-409f-8f07-ced644d94a1b', protocol='range'}
+2021-12-02 07:32:35.291  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Successfully synced group in generation Generation{generationId=7, memberId='consumer-food-order-consumer-group-2-981116d9-08c1-4030-ad3d-f7996a37f498', protocol='range'}
+2021-12-02 07:32:35.291  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.order-0])
+2021-12-02 07:32:35.291  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Notifying assignor about the new Assignment(partitions=[t.food.payment-0])
+2021-12-02 07:32:35.292  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.order-0
+2021-12-02 07:32:35.292  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Adding newly assigned partitions: t.food.payment-0
+2021-12-02 07:32:35.302  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Setting offset for partition t.food.payment-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2021-12-02 07:32:35.302  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Setting offset for partition t.food.order-0 to the committed offset FetchPosition{offset=7, offsetEpoch=Optional[0], currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2021-12-02 07:32:35.312  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.order-0]
+2021-12-02 07:32:35.312  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions assigned: [t.food.payment-0]
+2021-12-02 07:32:50.880  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.consumer.FoodOrderConsumer         : Food Order is valid: {"foodName":"pizza","category":"veg","amount":5}
+2021-12-02 07:32:57.849  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.e.f.consumer.FoodPaymentConsumer       : Food Payment is FoodPayment{foodName='pizza', paymentAmount=10.0}
+2021-12-02 07:33:05.367  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.e.f.error.handler.GlobalErrorHandler   : Error from Global error handler:{"foodName":"pizza","paymentAmount":3.0}
+2021-12-02 07:33:13.109  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.e.handler.FoodOrderErrorHandler    : Food order error. pretending to send to elasticsearch:{"foodName":"pizza","category":"veg","amount":10}, because :Listener method 'public void com.example.foodorderconsumer.consumer.FoodOrderConsumer.consumeFoodOrder(java.lang.String) throws com.fasterxml.jackson.core.JsonProcessingException' threw exception; nested exception is java.lang.IllegalArgumentException: Food Order amount is too many
+2021-12-02 07:33:13.110  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.e.f.error.handler.GlobalErrorHandler   : Error from Global error handler:{"foodName":"pizza","category":"veg","amount":10}
+2021-12-02 07:33:24.948  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.order-0
+2021-12-02 07:33:24.948  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Revoke previously assigned partitions t.food.payment-0
+2021-12-02 07:33:24.949  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.order-0]
+2021-12-02 07:33:24.949  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: partitions revoked: [t.food.payment-0]
+2021-12-02 07:33:24.949  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-1-ff64ecf6-a217-409f-8f07-ced644d94a1b sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 07:33:24.949  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Member consumer-food-order-consumer-group-2-981116d9-08c1-4030-ad3d-f7996a37f498 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2021-12-02 07:33:24.951  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.951  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Unsubscribed all topics or patterns and assigned partitions
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.952  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Resetting generation due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.953  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-1, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.953  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-food-order-consumer-group-2, groupId=food-order-consumer-group] Request joining group due to: consumer pro-actively leaving the group
+2021-12-02 07:33:24.957  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 07:33:24.957  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 07:33:24.957  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 07:33:24.960  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics scheduler closed
+2021-12-02 07:33:24.960  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2021-12-02 07:33:24.960  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.common.metrics.Metrics  : Metrics reporters closed
+2021-12-02 07:33:24.961  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-1 unregistered
+2021-12-02 07:33:24.962  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 07:33:24.963  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-food-order-consumer-group-2 unregistered
+2021-12-02 07:33:24.964  INFO 1522 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : food-order-consumer-group: Consumer stopped
+2021-12-02 07:33:24.966  INFO 1522 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-02 07:33:24.967  INFO 1522 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-02 07:33:24.970  INFO 1522 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-02 07:33:24.972  INFO 1522 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

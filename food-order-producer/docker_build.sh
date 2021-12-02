@@ -1,0 +1,1 @@
+docker build -t vbalaji215/food-order-producer:0.0.1-SNAPSHOT .

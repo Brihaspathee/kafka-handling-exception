@@ -1,0 +1,54 @@
+version: '3.8'
+
+# docker run command
+
+# CONSUMER
+# docker container run -p 8081:8081 --net kafka-net -e SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:29092 vbalaji215/kafka-consumer:0.0.1-SNAPSHOT
+
+# PRODUCER
+# docker container run -p 8082:8082 --net kafka-net -e SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:29092 vbalaji215/kafka-producer:0.0.1-SNAPSHOT
+
+services:
+  food-order-consumer:
+    image: vbalaji215/food-order-consumer:0.0.1-SNAPSHOT
+    container_name: food-order-consumer
+    networks:
+      - kafka-net
+    volumes:
+      - /Users/logs/kafka/handling-exception/consumer:/logs/local
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+  food-order-producer:
+    image: vbalaji215/food-order-producer:0.0.1-SNAPSHOT
+    container_name: food-order-producer
+    networks:
+      - kafka-net
+    volumes:
+      - /Users/logs/kafka/handling-exception/producer:/logs/local
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+    depends_on:
+      - food-order-consumer
+
+#volumes:
+#  kafka-consumer-vol:
+#    driver: local
+#    driver_opts:
+#      type: none
+#      o: bind
+#      device: /Users/logs/kafka/consumer
+#  kafka-producer-vol:
+#    driver: local
+#    driver_opts:
+#      type: none
+#      o: bind
+#      device: /Users/logs/kafka/producer
+
+networks:
+  kafka-net:
+    name: kafka-net
+    driver: bridge

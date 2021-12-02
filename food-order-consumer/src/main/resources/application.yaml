@@ -1,0 +1,34 @@
+server:
+  port: 8081
+spring:
+  kafka:
+    consumer:
+      group-id: food-order-consumer-group
+      enable-auto-commit: true
+      auto-offset-reset: earliest
+    bootstrap-servers: localhost:9092
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:mem:foodinventorydb
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  profiles:
+    active: local,clean
+
+logging:
+  file:
+    name: logs/local/food-order-consumer.log
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
